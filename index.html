@@ -23,7 +23,7 @@
   <meta name="twitter:description" content="PhD candidate in Economics researching the economics of science, AI, and innovation, with a focus on the medical device industry." />
   <meta name="twitter:image" content="https://fazliddin-shermatov.github.io/shermatov_profile.jpg" />
 
-  <!-- rel=me links -->
+  <!-- rel=me links help search engines confirm these profiles belong to the same person -->
   <link rel="me" href="https://www.linkedin.com/in/shermatov-fazli/" />
   <link rel="me" href="https://orcid.org/0009-0007-8562-8196" />
   <link rel="me" href="https://www.semanticscholar.org/author/Fazliddin-Shermatov/2297065579" />
@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
 
-  <!-- Structured data -->
+  <!-- Structured data: tells Google this page is a Person profile -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -70,10 +70,12 @@
     ]
   }
   </script>
-
   <style>
+
+
     /* ═══════════════════════════════════════════════
        DESIGN TOKENS
+       Change these to re-theme the whole site
     ════════════════════════════════════════════════ */
     :root {
       --navy:     #0A1628;
@@ -141,13 +143,13 @@
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
       list-style: none;
     }
 
     .nav-links a {
       color: rgba(255,255,255,0.65);
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-weight: 500;
@@ -155,6 +157,7 @@
 
     .nav-links a:hover { color: var(--gold); }
 
+    /* hamburger (mobile) */
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
     .nav-toggle span { display: block; width: 22px; height: 2px; background: #fff; margin: 5px 0; transition: 0.3s; }
 
@@ -188,6 +191,7 @@
       margin-bottom: 0.6rem;
     }
 
+    /* ── gold underline signature element ── */
     .hero-name span {
       position: relative;
       display: inline-block;
@@ -258,6 +262,7 @@
       color: var(--gold);
     }
 
+    /* photo frame */
     .hero-photo { display: flex; justify-content: center; align-items: flex-start; padding-top: 1rem; }
 
     .photo-wrap {
@@ -266,7 +271,9 @@
       flex-shrink: 0;
     }
 
-    .photo-wrap img {
+    /* Replace <img> src with your actual photo path */
+    .photo-wrap img,
+    .photo-placeholder {
       width: 240px;
       height: 300px;
       object-fit: cover;
@@ -274,6 +281,21 @@
       border: 1px solid var(--border);
     }
 
+    .photo-placeholder {
+      background: #E8E4DC;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      color: var(--muted);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* offset gold border — the signature accent */
     .photo-wrap::after {
       content: '';
       position: absolute;
@@ -349,7 +371,7 @@
     }
 
     /* ═══════════════════════════════════════════════
-       PAPERS / LIST ITEMS
+       PAPERS
     ════════════════════════════════════════════════ */
     .paper-list {
       display: flex;
@@ -401,16 +423,16 @@
     }
 
     .paper-authors {
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       color: var(--muted);
       margin-bottom: 0.2rem;
     }
 
     .paper-journal {
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       color: var(--muted);
       font-style: italic;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
     }
 
     .paper-links {
@@ -452,25 +474,8 @@
       margin-top: 0;
     }
     .paper-abstract.open {
-      max-height: 800px;
+      max-height: 400px;
       margin-top: 0.75rem;
-    }
-
-    /* List styling for visits & RA details */
-    .detail-list {
-      list-style: none;
-      margin-top: 0.4rem;
-    }
-    .detail-list li {
-      position: relative;
-      padding-left: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-    .detail-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--gold);
     }
 
     /* ═══════════════════════════════════════════════
@@ -499,6 +504,142 @@
       margin-right: 0.6rem;
       white-space: nowrap;
     }
+
+    /* ═══════════════════════════════════════════════
+       EDUCATION & EXPERIENCE (timeline entries)
+    ════════════════════════════════════════════════ */
+    .timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline-item {
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:first-child { padding-top: 0; }
+    .timeline-item:last-child { border-bottom: none; }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-org {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+
+    .timeline-org small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .timeline-when {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--gold);
+      white-space: nowrap;
+      text-align: right;
+      letter-spacing: 0.02em;
+    }
+
+    .timeline-role {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .timeline-detail {
+      font-size: 0.86rem;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-detail strong {
+      color: var(--navy-mid);
+      font-weight: 600;
+    }
+
+    .timeline-detail a {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+    }
+    .timeline-detail a:hover { border-color: var(--gold); }
+
+    .visiting-list {
+      list-style: none;
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .visiting-list li {
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .visiting-list li strong {
+      color: var(--navy-mid);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .ack-block {
+      margin-top: 0.9rem;
+      padding: 0.9rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+    }
+
+    .ack-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.55rem;
+      display: block;
+    }
+
+    .ack-pub {
+      font-size: 0.82rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+    .ack-pub:last-child { margin-bottom: 0; }
+
+    .ack-pub .ack-journal {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .ack-pub a {
+      font-size: 0.78rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      white-space: nowrap;
+    }
+    .ack-pub a:hover { border-color: var(--gold); }
 
     /* ═══════════════════════════════════════════════
        CONTACT
@@ -554,14 +695,18 @@
       }
 
       .hero-photo { order: -1; }
-      .photo-wrap, .photo-wrap img { width: 180px; height: 220px; }
+      .photo-wrap, .photo-wrap img, .photo-placeholder { width: 180px; height: 220px; }
 
       .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: var(--navy); padding: 1rem 6%; gap: 1rem; }
       .nav-links.open { display: flex; }
       .nav-toggle { display: block; }
 
       .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+      .timeline-top { flex-direction: column; gap: 0.2rem; }
+      .timeline-when { text-align: left; }
     }
+
   </style>
 </head>
 <body>
@@ -578,10 +723,10 @@
 
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#experience">Experience</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#presentations">Presentations</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -628,7 +773,7 @@
 
 
 <!-- ════════════════════════════════════════════════
-     01. RESEARCH INTERESTS
+     ABOUT / RESEARCH INTERESTS
 ════════════════════════════════════════════════ -->
 <section id="about">
 <div class="section-wrap">
@@ -669,191 +814,19 @@
 
 
 <!-- ════════════════════════════════════════════════
-     02. EDUCATION
-════════════════════════════════════════════════ -->
-<section id="education">
-<div class="section-wrap">
-
-  <div class="section-header">
-    <span class="section-label">02</span>
-    <h2 class="section-title">Education</h2>
-  </div>
-
-  <div class="paper-list">
-
-    <div class="paper-item">
-      <div class="paper-meta">
-        <span class="paper-year">2024–Present</span>
-      </div>
-
-      <h3 class="paper-title">Université Sorbonne Paris Nord <span style="font-weight:normal; font-size:0.95rem;">(cotutelle with the University of Turin)</span></h3>
-
-      <p class="paper-authors"><strong>PhD Candidate in Economics</strong></p>
-
-      <p class="paper-journal">
-        Thesis: <em>Assessing the Diffusion and Impact of Artificial Intelligence</em>
-      </p>
-
-      <div class="paper-abstract open">
-        <strong style="color: var(--navy);">Research Visits:</strong>
-        <ul class="detail-list">
-          <li><strong>Collegio Carlo Alberto</strong>, Italy (Sept 2024 – Mar 2025) — host: <em>Aldo Geuna</em></li>
-          <li><strong>Scuola Superiore Sant'Anna</strong>, Italy (Mar 2025 – Jul 2025) — hosts: <em>Giovanni Dosi</em> &amp; <em>Andrea Mina</em></li>
-          <li><strong>University of Strasbourg (BETA)</strong>, France (Mar 2026 – Present) — host: <em>Stefano Bianchini</em></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="paper-item">
-      <div class="paper-meta">
-        <span class="paper-year">2023–2024</span>
-      </div>
-
-      <h3 class="paper-title">Sorbonne University · Université de Technologie de Compiègne · Université Paris Cité</h3>
-
-      <p class="paper-authors">
-        <strong>M.Sc. in Economic Analysis and Policy (EPOG+ Erasmus Mundus)</strong>
-      </p>
-
-      <p class="paper-journal">
-        Graduated with <strong>Highest Honours (Mention Très Bien)</strong>
-      </p>
-    </div>
-
-    <div class="paper-item">
-      <div class="paper-meta">
-        <span class="paper-year">2022–2023</span>
-      </div>
-
-      <h3 class="paper-title">University of Turin</h3>
-
-      <p class="paper-authors">
-        <strong>M.Sc. in Economic Analysis and Policy (EPOG+ Erasmus Mundus)</strong>
-      </p>
-
-      <p class="paper-journal">
-        Final grade: <strong>110/110 cum laude</strong>
-      </p>
-    </div>
-
-    <div class="paper-item">
-      <div class="paper-meta">
-        <span class="paper-year">2017–2021</span>
-      </div>
-
-      <h3 class="paper-title">University of World Economy and Diplomacy</h3>
-
-      <p class="paper-authors">
-        <strong>B.A. in World Economy and International Economic Relations</strong>
-      </p>
-
-      <p class="paper-journal">
-        Graduated in the <strong>top 1% of the cohort</strong>
-      </p>
-    </div>
-
-    <div class="paper-item">
-      <div class="paper-meta">
-        <span class="paper-year">2014–2017</span>
-      </div>
-
-      <h3 class="paper-title">Mirzo Ulugbek Professional College of Computer Sciences</h3>
-
-      <p class="paper-authors">
-        <strong>Information Systems and Business Technologies</strong>
-      </p>
-
-      <p class="paper-journal">
-        Graduated <strong>with Honors</strong>
-      </p>
-    </div>
-
-  </div>
-
-</div>
-</section>
-
-
-<!-- ════════════════════════════════════════════════
-     03. RESEARCH EXPERIENCE
-════════════════════════════════════════════════ -->
-<section id="experience">
-<div class="section-wrap">
-
-  <div class="section-header">
-    <span class="section-label">03</span>
-    <h2 class="section-title">Research Experience</h2>
-  </div>
-
-  <div class="paper-list">
-
-    <div class="paper-item">
-      <div class="paper-meta">
-        <span class="paper-year">Dec 2022 – Nov 2023</span>
-      </div>
-
-      <h3 class="paper-title">Collegio Carlo Alberto</h3>
-
-      <p class="paper-authors">
-        <strong>Research Assistant</strong> · Supervisor: Aldo Geuna
-      </p>
-
-      <div class="paper-abstract open">
-        <span style="color: var(--muted);">Contributed as research assistant to projects resulting in:</span>
-        <ul class="detail-list" style="margin-top:0.5rem;">
-          <li>
-            Souza, D., Geuna, A., &amp; Lawson, C. (2025). <em>Building a scientific community? The WOEPS workshop and the evolution of the economics of science, 1994–2023.</em> <strong>Economics of Innovation and New Technology</strong>.
-          </li>
-          <li>
-            Souza, D., Geuna, A., &amp; Rodríguez, J. (2025). <em>How small is big enough? Open labeled datasets and the development of deep learning.</em> <strong>Industrial and Corporate Change</strong>.
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="paper-item">
-      <div class="paper-meta">
-        <span class="paper-year">Apr 2021 – Aug 2022</span>
-      </div>
-
-      <h3 class="paper-title">Preparation Study NGO</h3>
-
-      <p class="paper-authors">
-        <strong>Economic Manager</strong>
-      </p>
-    </div>
-
-    <div class="paper-item">
-      <div class="paper-meta">
-        <span class="paper-year">Sep 2019 – Nov 2021</span>
-      </div>
-
-      <h3 class="paper-title">Preparation Study NGO</h3>
-
-      <p class="paper-authors">
-        <strong>Economist</strong>
-      </p>
-    </div>
-
-  </div>
-
-</div>
-</section>
-
-
-<!-- ════════════════════════════════════════════════
-     04. WORKING PAPERS
+     WORKING PAPERS
 ════════════════════════════════════════════════ -->
 <section id="research">
 <div class="section-wrap">
 
   <div class="section-header">
-    <span class="section-label">04</span>
+    <span class="section-label">02</span>
     <h2 class="section-title">Working Papers</h2>
   </div>
 
   <div class="paper-list">
 
+    <!-- ── Paper 1 ── -->
     <div class="paper-item">
       <div class="paper-meta">
         <span class="paper-year">2026</span>
@@ -878,25 +851,26 @@
       </div>
     </div>
 
-  </div>
+  </div><!-- /paper-list -->
 
 </div>
 </section>
 
 
 <!-- ════════════════════════════════════════════════
-     05. PUBLICATIONS
+     PUBLICATIONS
 ════════════════════════════════════════════════ -->
 <section id="publications">
 <div class="section-wrap">
 
   <div class="section-header">
-    <span class="section-label">05</span>
+    <span class="section-label">03</span>
     <h2 class="section-title">Publications</h2>
   </div>
 
   <div class="paper-list">
 
+    <!-- ── Publication 1 ── -->
     <div class="paper-item">
       <div class="paper-meta">
         <span class="paper-year">2026</span>
@@ -924,6 +898,8 @@
       </div>
     </div>
 
+    <!-- Add more publications following the same pattern -->
+
   </div>
 
 </div>
@@ -931,7 +907,145 @@
 
 
 <!-- ════════════════════════════════════════════════
-     06. PRESENTATIONS
+     EDUCATION
+════════════════════════════════════════════════ -->
+<section id="education">
+<div class="section-wrap">
+
+  <div class="section-header">
+    <span class="section-label">04</span>
+    <h2 class="section-title">Education</h2>
+  </div>
+
+  <div class="timeline-list">
+
+    <!-- ── PhD ── -->
+    <div class="timeline-item">
+      <div class="timeline-top">
+        <span class="timeline-org">Université Sorbonne Paris Nord <small>in collab. w/ University of Turin</small></span>
+        <span class="timeline-when">Oct 2024 – Current · Paris, France</span>
+      </div>
+      <p class="timeline-role">PhD Candidate in Economics</p>
+      <p class="timeline-detail"><strong>Thesis:</strong> Assessing the Diffusion and Impact of Artificial Intelligence</p>
+      <p class="timeline-detail" style="margin-top: 0.6rem;"><strong>Visiting periods:</strong></p>
+      <ul class="visiting-list">
+        <li>Sept 2024 – March 2025, Collegio Carlo Alberto, Italy, with <strong>Aldo Geuna</strong></li>
+        <li>March 2025 – July 2025, Scuola Superiore Sant'Anna, Italy, with <strong>Giovanni Dosi</strong> and <strong>Andrea Mina</strong></li>
+        <li>March 2026 – current, Strasbourg University, France, with <strong>Stefano Bianchini</strong></li>
+      </ul>
+    </div>
+
+    <!-- ── MSc Sorbonne ── -->
+    <div class="timeline-item">
+      <div class="timeline-top">
+        <span class="timeline-org">Sorbonne University, University of Technology of Compiègne, Université Paris Cité</span>
+        <span class="timeline-when">Sept 2023 – July 2024 · Paris, France</span>
+      </div>
+      <p class="timeline-role">Master of Science in Economic Analysis and Policy (EMJMD – Economic Policies for the Global Transition)</p>
+      <p class="timeline-detail"><strong>Final grade:</strong> Mention très bien (Summa cum laude)</p>
+      <p class="timeline-detail"><strong>Website:</strong> <a href="https://www.epog.eu/" target="_blank">epog.eu ↗</a></p>
+    </div>
+
+    <!-- ── Master Turin ── -->
+    <div class="timeline-item">
+      <div class="timeline-top">
+        <span class="timeline-org">University of Turin</span>
+        <span class="timeline-when">Sept 2022 – July 2023 · Turin, Italy</span>
+      </div>
+      <p class="timeline-role">Master's Degree in Economic Analysis and Policy (EMJMD – Economic Policies for the Global Transition)</p>
+      <p class="timeline-detail"><strong>Final grade:</strong> 110 cum laude</p>
+      <p class="timeline-detail"><strong>Website:</strong> <a href="https://en.unito.it/ugov/degree/39574" target="_blank">unito.it ↗</a></p>
+    </div>
+
+    <!-- ── Bachelor ── -->
+    <div class="timeline-item">
+      <div class="timeline-top">
+        <span class="timeline-org">The University of World Economy and Diplomacy</span>
+        <span class="timeline-when">Aug 2017 – July 2021 · Tashkent, Uzbekistan</span>
+      </div>
+      <p class="timeline-role">Bachelor's Degree in World Economy and International Economic Relations</p>
+      <p class="timeline-detail"><strong>Final grade:</strong> Top 1% of graduates</p>
+      <p class="timeline-detail"><strong>Website:</strong> <a href="https://www.uwed.uz/en/" target="_blank">uwed.uz ↗</a></p>
+    </div>
+
+    <!-- ── College ── -->
+    <div class="timeline-item">
+      <div class="timeline-top">
+        <span class="timeline-org">Mirzo Ulugbek Professional College of Computer Sciences</span>
+        <span class="timeline-when">08/2014 – 06/2017 · Tashkent, Uzbekistan</span>
+      </div>
+      <p class="timeline-role">Degree in Information Systems and Technologies in Sphere of Business</p>
+      <p class="timeline-detail"><strong>Final grade:</strong> With Honors</p>
+    </div>
+
+  </div><!-- /timeline-list -->
+
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     EXPERIENCE
+════════════════════════════════════════════════ -->
+<section id="experience">
+<div class="section-wrap">
+
+  <div class="section-header">
+    <span class="section-label">05</span>
+    <h2 class="section-title">Experience</h2>
+  </div>
+
+  <div class="timeline-list">
+
+    <!-- ── Collegio Carlo Alberto ── -->
+    <div class="timeline-item">
+      <div class="timeline-top">
+        <span class="timeline-org">Collegio Carlo Alberto</span>
+        <span class="timeline-when">Dec 2022 – Nov 2023 · Turin, Italy</span>
+      </div>
+      <p class="timeline-role">University Research Assistant</p>
+      <p class="timeline-detail"><strong>Supervisor:</strong> Prof. Aldo Geuna (<a href="mailto:aldo.geuna@unito.it">aldo.geuna@unito.it</a>)</p>
+      <p class="timeline-detail"><strong>Website:</strong> <a href="https://www.carloalberto.org/" target="_blank">carloalberto.org ↗</a></p>
+
+      <div class="ack-block">
+        <span class="ack-label">Acknowledged as research assistant in:</span>
+
+        <p class="ack-pub">
+          Souza, D., Geuna, A., &amp; Lawson, C. (2025). Building a scientific community?
+          The WOEPS workshop and the evolution of the economics of science, 1994–2023.
+          <span class="ack-journal">Economics of Innovation and New Technology</span>, 1–42.
+          <br>
+          <a href="https://doi.org/10.1080/10438599.2025.2571618" target="_blank">doi.org/10.1080/10438599.2025.2571618 ↗</a>
+        </p>
+
+        <p class="ack-pub">
+          Souza, D., Geuna, A., &amp; Rodríguez, J. How small is big enough? Open labeled
+          datasets and the development of deep learning.
+          <span class="ack-journal">Industrial and Corporate Change</span>, Volume 34,
+          Issue 6, December 2025, Pages 1322–1365.
+          <br>
+          <a href="https://doi.org/10.1093/icc/dtaf044" target="_blank">doi.org/10.1093/icc/dtaf044 ↗</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Economic Manager ── -->
+    <div class="timeline-item">
+      <div class="timeline-top">
+        <span class="timeline-org">"Preparation Study" NGO</span>
+        <span class="timeline-when">Sept 2019 – Aug 2022 · Tashkent, Uzbekistan</span>
+      </div>
+      <p class="timeline-role">Economist</p>
+    </div>
+
+  </div><!-- /timeline-list -->
+
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     PRESENTATIONS
 ════════════════════════════════════════════════ -->
 <section id="presentations">
 <div class="section-wrap">
@@ -942,30 +1056,30 @@
   </div>
 
   <ul class="presentations-list">
-    <li><span class="pres-date">Jul 2026</span> International Schumpeter Society Conference (ISS2026), Strasbourg, France</li>
-    <li><span class="pres-date">Jun–Jul 2026</span> Jean Monnet Summer School, BETA, University of Strasbourg, France</li>
-    <li><span class="pres-date">26–27 Mar 2026</span> New Developments &amp; Alternative Models in Health Innovation, MSH Paris Nord, France</li>
-    <li><span class="pres-date">Jan 2026</span> EPOG Seminar Series</li>
-    <li><span class="pres-date">Dec 2025</span> Workshop in Economics of Innovation, Geography and Science, Turin, Italy</li>
-    <li><span class="pres-date">3 Oct 2025</span> Research Policy Early Career Researchers Online</li>
-    <li><span class="pres-date">Jun–Jul 2025</span> KID2025 — Knowledge Dynamics, Industry Evolution, Economic Development Summer School, Université Côte d'Azur, Nice, France</li>
-    <li><span class="pres-date">Jun 2025</span> REGIS Summer School (REading Group in Innovation Studies), University of Bordeaux, Bordeaux, France</li>
-    <li><span class="pres-date">3–4 Apr 2025</span> WOEPSR — Workshop on the Organisation, Economics and Policy of Scientific Research, Strasbourg, France</li>
-    <li><span class="pres-date">Dec 2024</span> WICK#12 — PhD Workshop in Economics of Innovation, Complexity and Knowledge, Collegio Carlo Alberto, Turin, Italy <em>(also organising team)</em></li>
-    <li><span class="pres-date">27 Sep 2024</span> Research Policy 8th Online Conference for Early Career Researchers (ECRs)</li>
-    <li><span class="pres-date">Sep 2024</span> 28th International Conference on Science, Technology and Innovation Indicators (STI 2024), Berlin, Germany</li>
-    <li><span class="pres-date">Sep 2024</span> 9th Summer School on Data and Algorithms for ST&amp;I Studies, KU Leuven Campus Opera, Antwerp, Belgium</li>
-    <li><span class="pres-date">Jun 2024</span> InSySPo Annual Conference (Innovation Systems, Strategies and Policy), UNICAMP, Campinas, Brazil</li>
-    <li><span class="pres-date">Jun–Jul 2024</span> São Paulo Advanced School on Technology &amp; Innovation Strategies and Policies for Economic Development, UNICAMP, Campinas, Brazil</li>
-    <li><span class="pres-date">May 2024</span> Workshop on the Economics of Science and Innovation, Bordeaux School of Economics, Bordeaux, France</li>
-  </ul>
+  <li><span class="pres-date">Jul 2026</span> International Schumpeter Society Conference (ISS2026), Strasbourg, France</li>
+  <li><span class="pres-date">Jun–Jul 2026</span> Jean Monnet Summer School, BETA, University of Strasbourg, France</li>
+  <li><span class="pres-date">26–27 Mar 2026</span> New Developments &amp; Alternative Models in Health Innovation, MSH Paris Nord, France</li>
+  <li><span class="pres-date">Jan 2026</span> EPOG Seminar Series</li>
+  <li><span class="pres-date">Dec 2025</span> Workshop in Economics of Innovation, Geography and Science, Turin, Italy</li>
+  <li><span class="pres-date">3 Oct 2025</span> Research Policy Early Career Researchers Online</li>
+  <li><span class="pres-date">Jun–Jul 2025</span> KID2025 — Knowledge Dynamics, Industry Evolution, Economic Development Summer School, Université Côte d'Azur, Nice, France</li>
+  <li><span class="pres-date">Jun 2025</span> REGIS Summer School (REading Group in Innovation Studies), University of Bordeaux, Bordeaux, France</li>
+  <li><span class="pres-date">3–4 Apr 2025</span> WOEPSR — Workshop on the Organisation, Economics and Policy of Scientific Research, Strasbourg, France</li>
+  <li><span class="pres-date">Dec 2024</span> WICK#12 — PhD Workshop in Economics of Innovation, Complexity and Knowledge, Collegio Carlo Alberto, Turin, Italy <em>(also organising team)</em></li>
+  <li><span class="pres-date">27 Sep 2024</span> Research Policy 8th Online Conference for Early Career Researchers (ECRs)</li>
+  <li><span class="pres-date">Sep 2024</span> 28th International Conference on Science, Technology and Innovation Indicators (STI 2024), Berlin, Germany</li>
+  <li><span class="pres-date">Sep 2024</span> 9th Summer School on Data and Algorithms for ST&amp;I Studies, KU Leuven Campus Opera, Antwerp, Belgium</li>
+  <li><span class="pres-date">Jun 2024</span> InSySPo Annual Conference (Innovation Systems, Strategies and Policy), UNICAMP, Campinas, Brazil</li>
+  <li><span class="pres-date">Jun–Jul 2024</span> São Paulo Advanced School on Technology &amp; Innovation Strategies and Policies for Economic Development, UNICAMP, Campinas, Brazil</li>
+  <li><span class="pres-date">May 2024</span> Workshop on the Economics of Science and Innovation, Bordeaux School of Economics, Bordeaux, France</li>
+</ul>
 
 </div>
 </section>
 
 
 <!-- ════════════════════════════════════════════════
-     07. CONTACT
+     CONTACT
 ════════════════════════════════════════════════ -->
 <section id="contact">
 <div class="section-wrap">
