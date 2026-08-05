@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fazli Shermatov — Economist</title>
-  <meta name="description" content="PhD Candidate in Economics at the University of Strasbourg. Research on AI adoption, medical devices, innovation economics, and firm performance." />
+  <title>Fazliddin Shermatov — Economist</title>
+  <meta name="description" content="PhD Candidate in Economics at Université Sorbonne Paris Nord and University of Strasbourg. Research on AI adoption, medical devices, innovation economics, and firm performance." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
@@ -416,6 +416,33 @@
     }
 
     /* ═══════════════════════════════════════════════
+       PRESENTATIONS
+    ════════════════════════════════════════════════ */
+    .presentations-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .presentations-list li {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .presentations-list li:last-child { border-bottom: none; }
+
+    .pres-date {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--gold);
+      margin-right: 0.6rem;
+      white-space: nowrap;
+    }
+
+    /* ═══════════════════════════════════════════════
        CONTACT
     ════════════════════════════════════════════════ */
     .contact-grid {
@@ -486,7 +513,7 @@
      NAVIGATION
 ════════════════════════════════════════════════ -->
 <nav>
-  <span class="nav-name">Fazli Shermatov</span>
+  <span class="nav-name">Fazliddin Shermatov</span>
 
   <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -496,6 +523,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
+    <li><a href="#presentations">Presentations</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -510,46 +538,30 @@
     <p class="hero-eyebrow">PhD Candidate · Economics</p>
 
     <h1 class="hero-name">
-      Fazli<br>
+      Fazliddin<br>
       <span>Shermatov</span>
     </h1>
 
-    <p class="hero-title">University of Strasbourg</p>
+    <p class="hero-title">Université Sorbonne Paris Nord &amp; University of Strasbourg</p>
 
     <p class="hero-bio">
-      I study how firms adopt artificial intelligence and how this shapes
-      innovation and market performance — with a focus on the medical device
-      industry. My work sits at the intersection of innovation economics,
-      health economics, and firm-level empirics.
+      I study the economics of science and innovation in the age of artificial intelligence:
+      how AI itself emerges from enabling technologies and computing infrastructure, and how
+      it then reshapes the economy through the channels of scientific discovery, firm
+      innovation, and market performance — with a particular focus on the medical device
+      industry.
     </p>
 
     <div class="hero-ctas">
-      <!-- Update href with your real email -->
-      <a href="mailto:firstname.surname@unistra.fr" class="btn btn-primary">✉ Email me</a>
-      <!-- Upload your CV as cv.pdf to the same folder -->
-      <a href="cv.pdf" class="btn btn-outline" target="_blank">CV (PDF) ↗</a>
-      <!-- Update with your Google Scholar URL -->
-      <a href="https://scholar.google.com" class="btn btn-outline" target="_blank">Scholar ↗</a>
+      <a href="mailto:fazliddin.shermatov@edu.univ-paris13.fr" class="btn btn-primary">✉ Email me</a>
+      <a href="Shermatov_CV.pdf" class="btn btn-outline" target="_blank">CV (PDF) ↗</a>
+      <a href="https://www.semanticscholar.org/author/Fazliddin-Shermatov/2297065579" class="btn btn-outline" target="_blank">Scholar ↗</a>
     </div>
   </div>
 
   <div class="hero-photo">
     <div class="photo-wrap">
-      <!--
-        OPTION A — Use a photo:
-          Replace the placeholder div below with:
-          <img src="photo.jpg" alt="Fazli Shermatov" />
-          Then upload your photo as "photo.jpg" to your GitHub repo.
-
-        OPTION B — Keep the placeholder until you have a photo.
-      -->
-      <div class="photo-placeholder">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.5">
-          <circle cx="12" cy="7" r="4"/>
-          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-        </svg>
-        Replace with<br>your photo
-      </div>
+      <img src="shermatov_profile.jpg" alt="Fazliddin Shermatov" />
     </div>
   </div>
 
@@ -568,22 +580,25 @@
   </div>
 
   <div class="interests-grid">
-    <span class="tag">AI Adoption</span>
-    <span class="tag">Medical Devices</span>
+    <span class="tag">Economics of Science &amp; Innovation</span>
+    <span class="tag">AI &amp; High-Performance Computing</span>
     <span class="tag">Innovation Economics</span>
-    <span class="tag">Health Economics</span>
     <span class="tag">Firm Performance</span>
+    <span class="tag">Medical Devices</span>
+    <span class="tag">Knowledge Collaboration</span>
     <span class="tag">Patents &amp; Bibliometrics</span>
     <span class="tag">Econometrics</span>
-    <span class="tag">Industrial Organisation</span>
   </div>
 
-  <!-- Optional longer paragraph about your research agenda -->
   <p class="about-bio">
-    [Optional: 2–3 sentences about your broader research agenda and methodological approach.
-    For example: "My research combines administrative microdata — FDA device clearances, patent records,
-    bibliometric indices, and firm-level financial data — with structural econometric methods to identify
-    causal effects of innovation on market outcomes."]
+    My research traces the full chain from science to economic outcomes: how AI itself
+    emerges from enabling technologies and computing infrastructure, how it diffuses into
+    scientific discovery and firm-level innovation, and how it ultimately translates into
+    market performance — <em>Science → AI → Innovation → Performance</em>. Empirically, this
+    means combining administrative microdata — FDA device clearances, patent records,
+    bibliometric indices, and firm-level financial data — with structural econometric
+    methods (CDM / IV-2SLS frameworks) to identify causal effects of AI-driven innovation
+    on firm performance, with a particular focus on the medical device industry.
   </p>
 
 </div>
@@ -606,36 +621,25 @@
     <!-- ── Paper 1 ── -->
     <div class="paper-item">
       <div class="paper-meta">
-        <span class="paper-year">2025</span>
-        <span class="paper-badge badge-wp">Working Paper</span>
-      </div>
-      <h3 class="paper-title">AI Innovation and Firm Performance in the Medical Device Industry</h3>
-      <p class="paper-authors">Fazli Shermatov</p>
-      <div class="paper-links">
-        <a href="#" class="paper-link">PDF ↗</a>
-        <a href="#" class="paper-link">SSRN ↗</a>
-        <button class="abstract-btn" onclick="toggleAbstract(this)">▾ Abstract</button>
-      </div>
-      <div class="paper-abstract">
-        [Paste your abstract here. This expands on click. Describe your research question,
-        empirical strategy — CDM framework, FDA data, patent and bibliometric linkages —
-        and main findings in 3–5 sentences.]
-      </div>
-    </div>
-
-    <!-- ── Paper 2 ── -->
-    <div class="paper-item">
-      <div class="paper-meta">
-        <span class="paper-year">2024</span>
+        <span class="paper-year">2026</span>
         <span class="paper-badge badge-prog">Work in Progress</span>
       </div>
-      <h3 class="paper-title">Second Paper Title — Work in Progress</h3>
-      <p class="paper-authors">Fazli Shermatov, Co-Author Name</p>
+      <h3 class="paper-title">AI Innovation and Firm Performance in the Medical Device Industry</h3>
+      <p class="paper-authors">Fazliddin Shermatov, Stéphane Robin, Aldo Geuna</p>
       <div class="paper-links">
         <button class="abstract-btn" onclick="toggleAbstract(this)">▾ Abstract</button>
       </div>
       <div class="paper-abstract">
-        [Abstract for your second paper or project description.]
+        An AI-enabled medical device must obtain regulatory clearance before reaching a
+        patient, leaving a rare, dated, firm-attributable record of AI innovation output.
+        We exploit this setting with a three-stage recursive model estimated on a novel
+        firm-level dataset linking FDA premarket clearances, USPTO patents, Scopus
+        publications, and Orbis financials, tracing the innovation chain from external
+        AI research collaboration through AI device introduction to firm performance.
+        External collaboration robustly drives AI device introduction, with a larger
+        effect for small firms; device introduction in turn raises labour productivity
+        robustly, while effects on profit margins are weaker and less stable, consistent
+        with competitive entry eroding pricing power as AI devices diffuse through the sector.
       </div>
     </div>
 
@@ -661,15 +665,25 @@
     <!-- ── Publication 1 ── -->
     <div class="paper-item">
       <div class="paper-meta">
-        <span class="paper-year">2023</span>
+        <span class="paper-year">2026</span>
         <span class="paper-badge badge-pub">Published</span>
       </div>
-      <h3 class="paper-title">Published Article Title</h3>
-      <p class="paper-authors">Fazli Shermatov, Co-Author Name</p>
-      <p class="paper-journal">Journal of [Field], Vol. X, No. Y, pp. AAA–BBB</p>
+      <h3 class="paper-title">Scientific Discovery in the Age of AI and Supercomputing</h3>
+      <p class="paper-authors">Stefano Bianchini, Aldo Geuna, Fazliddin Shermatov</p>
+      <p class="paper-journal">Scientific Reports (2026)</p>
       <div class="paper-links">
-        <a href="#" class="paper-link">DOI ↗</a>
-        <a href="#" class="paper-link">PDF ↗</a>
+        <a href="https://doi.org/10.1038/s41598-026-63438-7" class="paper-link" target="_blank">DOI ↗</a>
+        <button class="abstract-btn" onclick="toggleAbstract(this)">▾ Abstract</button>
+      </div>
+      <div class="paper-abstract">
+        Drawing on metadata from more than five million scientific publications (2000–2024)
+        across 27 fields, we examine how the convergence of AI and high-performance computing
+        relates to scientific breakthroughs. The synergy between the two is strongest at the
+        research frontier: work combining AI and HPC is more likely to introduce novel ideas
+        and reach top-cited status than conventional research or work using either capability
+        alone. We also document growing disparities in access to supercomputing and AI
+        expertise, increasingly concentrated in a small number of regions led by the US and
+        China, with the EU27 remaining competitive in combined AI+HPC output.
       </div>
     </div>
 
@@ -682,13 +696,47 @@
 
 
 <!-- ════════════════════════════════════════════════
+     PRESENTATIONS
+════════════════════════════════════════════════ -->
+<section id="presentations">
+<div class="section-wrap">
+
+  <div class="section-header">
+    <span class="section-label">04</span>
+    <h2 class="section-title">Presentations</h2>
+  </div>
+
+  <ul class="presentations-list">
+    <li><span class="pres-date">May 2024</span> Workshop on the Economics of Science and Innovation, Bordeaux School of Economics, Bordeaux, France</li>
+    <li><span class="pres-date">Jun–Jul 2024</span> São Paulo Advanced School on Technology &amp; Innovation Strategies and Policies for Economic Development, UNICAMP, Campinas, Brazil</li>
+    <li><span class="pres-date">Jun 2024</span> InSySPo Annual Conference (Innovation Systems, Strategies and Policy), UNICAMP, Campinas, Brazil</li>
+    <li><span class="pres-date">Sep 2024</span> 9th Summer School on Data and Algorithms for ST&amp;I Studies, KU Leuven Campus Opera, Antwerp, Belgium</li>
+    <li><span class="pres-date">Sep 2024</span> 28th International Conference on Science, Technology and Innovation Indicators (STI 2024), Berlin, Germany</li>
+    <li><span class="pres-date">27 Sep 2024</span> Research Policy 8th Online Conference for Early Career Researchers (ECRs)</li>
+    <li><span class="pres-date">Dec 2024</span> WICK#12 — PhD Workshop in Economics of Innovation, Complexity and Knowledge, Collegio Carlo Alberto, Turin, Italy <em>(also organising team)</em></li>
+    <li><span class="pres-date">3–4 Apr 2025</span> WOEPSR — Workshop on the Organisation, Economics and Policy of Scientific Research, Strasbourg, France</li>
+    <li><span class="pres-date">Jun 2025</span> REGIS Summer School (REading Group in Innovation Studies), University of Bordeaux, Bordeaux, France</li>
+    <li><span class="pres-date">Jun–Jul 2025</span> KID2025 — Knowledge Dynamics, Industry Evolution, Economic Development Summer School, Université Côte d'Azur, Nice, France</li>
+    <li><span class="pres-date">3 Oct 2025</span> Research Policy Early Career Researchers Online</li>
+    <li><span class="pres-date">Dec 2025</span> Workshop in Economics of Innovation, Geography and Science, Turin, Italy</li>
+    <li><span class="pres-date">Jan 2026</span> EPOG Seminar Series</li>
+    <li><span class="pres-date">26–27 Mar 2026</span> New Developments &amp; Alternative Models in Health Innovation, MSH Paris Nord, France</li>
+    <li><span class="pres-date">Jun–Jul 2026</span> Jean Monnet Summer School, BETA, University of Strasbourg, France</li>
+    <li><span class="pres-date">Jul 2026</span> International Schumpeter Society Conference (ISS2026), Strasbourg, France</li>
+  </ul>
+
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
      CONTACT
 ════════════════════════════════════════════════ -->
 <section id="contact">
 <div class="section-wrap">
 
   <div class="section-header">
-    <span class="section-label">04</span>
+    <span class="section-label">05</span>
     <h2 class="section-title">Contact</h2>
   </div>
 
@@ -696,35 +744,37 @@
 
     <div class="contact-block">
       <span class="contact-label">Email</span>
-      <a href="mailto:firstname.surname@unistra.fr" class="contact-value">
-        firstname.surname@unistra.fr
+      <a href="mailto:fazliddin.shermatov@edu.univ-paris13.fr" class="contact-value">
+        fazliddin.shermatov@edu.univ-paris13.fr
+      </a>
+      <a href="mailto:shermatov@unistra.fr" class="contact-value">
+        shermatov@unistra.fr
       </a>
     </div>
 
     <div class="contact-block">
-      <span class="contact-label">Office</span>
+      <span class="contact-label">Affiliations</span>
       <span class="contact-value">
-        Room XXX, [Building Name]<br>
-        University of Strasbourg
+        Université Sorbonne Paris Nord<br>
+        University of Strasbourg (BETA)
       </span>
     </div>
 
     <div class="contact-block">
       <span class="contact-label">Address</span>
       <span class="contact-value">
-        [Your department]<br>
-        University of Strasbourg<br>
-        Strasbourg, France
+        PhD Candidate in Economics<br>
+        Strasbourg / Paris, France
       </span>
     </div>
 
     <div class="contact-block">
       <span class="contact-label">Profiles</span>
       <div class="social-links">
-        <a href="https://scholar.google.com" target="_blank">Google Scholar ↗</a>
-        <a href="https://ideas.repec.org" target="_blank">IDEAS / RePEC ↗</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn ↗</a>
-        <a href="https://orcid.org" target="_blank">ORCID ↗</a>
+        <a href="https://www.semanticscholar.org/author/Fazliddin-Shermatov/2297065579" target="_blank">Semantic Scholar ↗</a>
+        <a href="https://www.researchgate.net/profile/Fazliddin-Shermatov/research" target="_blank">ResearchGate ↗</a>
+        <a href="https://www.linkedin.com/in/shermatov-fazli/" target="_blank">LinkedIn ↗</a>
+        <a href="https://orcid.org/0009-0007-8562-8196" target="_blank">ORCID ↗</a>
       </div>
     </div>
 
@@ -738,7 +788,7 @@
      FOOTER
 ════════════════════════════════════════════════ -->
 <footer>
-  © 2025 Fazli Shermatov &nbsp;·&nbsp; Last updated June 2025
+  © 2026 Fazliddin Shermatov &nbsp;·&nbsp; Last updated August 2026
 </footer>
 
 
