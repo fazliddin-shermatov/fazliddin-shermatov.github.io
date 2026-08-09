@@ -31,6 +31,7 @@
   <link rel="me" href="https://orcid.org/0009-0007-8562-8196" />
   <link rel="me" href="https://www.semanticscholar.org/author/Fazliddin-Shermatov/2297065579" />
   <link rel="me" href="https://www.researchgate.net/profile/Fazliddin-Shermatov/research" />
+  <link rel="me" href="https://scholar.google.com/citations?user=HmEEavAAAAAJ" />
   <link rel="me" href="mailto:fazliddin.shermatov@edu.univ-paris13.fr" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +62,8 @@
       "https://www.linkedin.com/in/shermatov-fazli/",
       "https://orcid.org/0009-0007-8562-8196",
       "https://www.semanticscholar.org/author/Fazliddin-Shermatov/2297065579",
-      "https://www.researchgate.net/profile/Fazliddin-Shermatov/research"
+      "https://www.researchgate.net/profile/Fazliddin-Shermatov/research",
+      "https://scholar.google.com/citations?user=HmEEavAAAAAJ"
     ],
     "knowsAbout": [
       "Economics of Science and Innovation",
@@ -118,6 +120,8 @@
       display: block;
       max-width: 100%;
     }
+
+    svg { display: block; }
 
     /* ═══════════════════════════════════════════════
        NAVIGATION
@@ -224,45 +228,51 @@
       line-height: 1.85;
     }
 
+    /* ── hero icon links (LinkedIn, Scholar, Email, CV) ── */
     .hero-ctas {
       display: flex;
-      gap: 0.85rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
+      align-items: center;
     }
 
-    .btn {
+    .icon-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.55rem 1.25rem;
+      gap: 0.55rem;
+      padding: 0.6rem 1.1rem;
       border-radius: 2px;
       font-size: 0.83rem;
       font-weight: 500;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
       transition: all 0.2s;
       cursor: pointer;
-      border: 1px solid transparent;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--navy);
     }
 
-    .btn-primary {
-      background: var(--navy);
-      color: #fff;
-      border-color: var(--navy);
+    .icon-btn svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
     }
-    .btn-primary:hover {
+
+    .icon-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    .icon-btn.primary {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+    .icon-btn.primary:hover {
       background: var(--gold);
       border-color: var(--gold);
       color: var(--navy);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--navy);
-      border-color: var(--border);
-    }
-    .btn-outline:hover {
-      border-color: var(--gold);
-      color: var(--gold);
     }
 
     /* photo frame */
@@ -479,6 +489,50 @@
     .paper-abstract.open {
       max-height: 400px;
       margin-top: 0.75rem;
+    }
+
+    .paper-cite {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      padding: 0 1rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      margin-top: 0;
+      transition: max-height 0.35s ease, margin-top 0.2s, padding 0.2s, opacity 0.2s;
+    }
+    .paper-cite.open {
+      max-height: 200px;
+      opacity: 1;
+      padding: 0.9rem 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .cite-text { flex: 1; }
+
+    .copy-cite-btn {
+      flex-shrink: 0;
+      background: none;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      color: var(--navy-mid);
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .copy-cite-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
     }
 
     /* ═══════════════════════════════════════════════
@@ -759,10 +813,41 @@
       industry.
     </p>
 
+    <!-- Order: LinkedIn, Google Scholar, Email, CV -->
     <div class="hero-ctas">
-      <a href="mailto:shermatov@unistra.fr" class="btn btn-primary">✉ Email me</a>
-      <a href="Shermatov_CV.pdf" class="btn btn-outline" target="_blank">CV (PDF) ↗</a>
-      <a href="https://www.semanticscholar.org/author/Fazliddin-Shermatov/2297065579" class="btn btn-outline" target="_blank">Scholar ↗</a>
+
+      <a href="https://www.linkedin.com/in/shermatov-fazli/" class="icon-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+
+      <a href="https://scholar.google.com/citations?user=HmEEavAAAAAJ" class="icon-btn" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2 1 9l4 2.5V17l7 4 7-4v-5.5L23 9 12 2zm0 2.4L19.5 9 12 13.6 4.5 9 12 4.4zM7 12.9l5 3.1 5-3.1v3.2l-5 2.9-5-2.9v-3.2z"/>
+        </svg>
+        <span>Scholar</span>
+      </a>
+
+      <a href="mailto:shermatov@unistra.fr" class="icon-btn" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 6-10 7L2 6"/>
+        </svg>
+        <span>Email Me</span>
+      </a>
+
+      <a href="Shermatov_CV.pdf" class="icon-btn primary" target="_blank" aria-label="CV (PDF)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <path d="M14 2v6h6"/>
+          <path d="M12 18v-6"/>
+          <path d="m9 15 3 3 3-3"/>
+        </svg>
+        <span>CV (PDF)</span>
+      </a>
+
     </div>
   </div>
 
@@ -893,6 +978,11 @@
       <div class="paper-links">
         <a href="https://doi.org/10.1038/s41598-026-63438-7" class="paper-link" target="_blank">DOI ↗</a>
         <button class="abstract-btn" onclick="toggleAbstract(this)">▾ Abstract</button>
+        <button class="abstract-btn" onclick="toggleCite(this)">▾ Cite as</button>
+      </div>
+      <div class="paper-cite">
+        <span class="cite-text">Bianchini, S., Geuna, A., &amp; Shermatov, F. (2026). Scientific discovery in the age of AI and supercomputing. <em>Scientific Reports</em>. https://doi.org/10.1038/s41598-026-63438-7</span>
+        <button class="copy-cite-btn" onclick="copyCitation(this)">Copy</button>
       </div>
       <div class="paper-abstract">
   Artificial intelligence (AI) and high-performance computing (HPC) are transforming
@@ -1135,6 +1225,7 @@
     <div class="contact-block">
       <span class="contact-label">Profiles</span>
       <div class="social-links">
+        <a href="https://scholar.google.com/citations?user=HmEEavAAAAAJ" target="_blank">Google Scholar ↗</a>
         <a href="https://www.semanticscholar.org/author/Fazliddin-Shermatov/2297065579" target="_blank">Semantic Scholar ↗</a>
         <a href="https://www.researchgate.net/profile/Fazliddin-Shermatov/research" target="_blank">ResearchGate ↗</a>
         <a href="https://www.linkedin.com/in/shermatov-fazli/" target="_blank">LinkedIn ↗</a>
@@ -1166,6 +1257,24 @@
     const abstract = item.querySelector('.paper-abstract');
     const isOpen   = abstract.classList.toggle('open');
     btn.textContent = isOpen ? '▴ Abstract' : '▾ Abstract';
+  }
+
+  // Expand / collapse the "Cite" block
+  function toggleCite(btn) {
+    const item = btn.closest('.paper-item');
+    const cite = item.querySelector('.paper-cite');
+    const isOpen = cite.classList.toggle('open');
+    btn.textContent = isOpen ? '▴ Cite as' : '▾ Cite as';
+  }
+
+  // Copy citation text to clipboard
+  function copyCitation(btn) {
+    const text = btn.previousElementSibling.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => { btn.textContent = original; }, 1500);
+    });
   }
 
   // Close mobile nav when a link is tapped
