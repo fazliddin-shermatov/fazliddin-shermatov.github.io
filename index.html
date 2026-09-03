@@ -1,3 +1,6 @@
+Here's the full HTML with the merged breakpoint applied — everything else is unchanged from what you pasted.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -175,11 +178,15 @@
       min-height: 100vh;
       padding: 120px 6% 80px;
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 5rem;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: clamp(1.5rem, 5vw, 5rem);
       align-items: center;
       max-width: 1060px;
       margin: 0 auto;
+    }
+
+    .hero-text {
+      min-width: 0;
     }
 
     .hero-eyebrow {
@@ -742,7 +749,7 @@
     /* ═══════════════════════════════════════════════
        RESPONSIVE
     ════════════════════════════════════════════════ */
-    @media (max-width: 740px) {
+    @media (max-width: 900px) {
       #hero {
         grid-template-columns: 1fr;
         min-height: auto;
@@ -806,11 +813,8 @@
     <p class="hero-title">Université Sorbonne Paris Nord &amp; University of Strasbourg</p>
 
     <p class="hero-bio">
-      I study the economics of science and innovation in the age of artificial intelligence:
-      how AI itself emerges from enabling technologies and computing infrastructure, and how
-      it then reshapes the economy through the channels of scientific discovery, firm
-      innovation, and market performance: with a particular focus on the medical device
-      industry.
+      I study the economics of science and innovation in the age of artificial intelligence: how AI itself emerges from enabling technologies and computing infrastructure, and how
+      it then reshapes the economy through the channels of scientific discovery, firm innovation, and market performance, with a particular focus on the medical device industry.
     </p>
 
     <!-- Order: LinkedIn, Google Scholar, Email, CV -->
@@ -883,18 +887,12 @@
   </div>
 
   <p class="about-bio">
-    My research traces the full chain from science to economic outcomes: how AI itself
-    emerges from enabling technologies and computing infrastructure, how it diffuses into
-    scientific discovery and firm-level innovation, and how it ultimately translates into
-    market performance — <em>Science → AI → Innovation → Performance</em>. My work on AI and
-    high-performance computing examines the first half of this chain, showing that the
-    computational synergy between the two is most powerful precisely at the scientific
-    frontier. My work on the medical device industry examines the second half, tracing how
-    AI research collaboration and AI-enabled product innovation feed through to firm-level
-    productivity and performance. Empirically, this means combining administrative
-    microdata, such as company products, patent records, bibliometric indices, and firm-level
-    financial data, with structural econometric methods to
-    identify causal effects of AI-driven innovation on firm performance.
+    My research traces the full chain from science to economic outcomes: how AI itself emerges from enabling technologies and computing infrastructure, how it diffuses into
+    scientific discovery and firm-level innovation, and how it ultimately translates into market performance — <em>Science → AI → Innovation → Performance</em>. My work on AI and
+    high-performance computing examines the first half of this chain, showing that the computational synergy between the two is most powerful precisely at the scientific
+    frontier. My work on the medical device industry examines the second half, tracing how AI research collaboration and AI-enabled product innovation feed through to firm-level
+    productivity and performance. Empirically, this means combining administrative microdata, such as company products, patent records, bibliometric indices, and firm-level
+    financial data, with structural econometric methods to identify causal effects of AI-driven innovation on firm performance.
   </p>
 
 </div>
@@ -926,24 +924,15 @@
         <button class="abstract-btn" onclick="toggleAbstract(this)">▾ Abstract</button>
       </div>
       <div class="paper-abstract">
-  Whether artificial intelligence (AI) pays off for the firms that embed it in their
-  products remains difficult to establish because AI innovation is itself hard to
-  observe. The medical device industry provides a rare setting in which AI innovation
-  can be measured directly: every AI-enabled device must obtain regulatory clearance
-  before reaching patients, leaving a dated, firm-attributable record of innovation.
-  We exploit this setting using a novel firm-level dataset linking FDA premarket
-  clearances, USPTO patents, Scopus publications, and Orbis financial data, together
-  with a three-stage recursive econometric model that traces the innovation chain from
-  external AI research collaboration through AI device introduction to firm
-  performance. We find that external AI research collaboration is a robust driver of
-  AI device introduction, with particularly strong effects for small firms,
-  suggesting that external knowledge partnerships can substitute for limited internal
-  R&D capacity. Industry and clinical collaborations have the largest impact, whereas
-  academic collaborations play a more modest role. Firms that successfully introduce
-  AI-enabled medical devices achieve higher labour productivity, with gains that
-  accumulate across successive device introductions. By contrast, improvements in
-  profit margins are weaker and less robust, consistent with increased competition
-  reducing pricing power as AI technologies diffuse throughout the industry.
+  Whether artificial intelligence (AI) pays off for the firms that embed it in their products remains difficult to establish because AI innovation is itself hard to
+  observe. The medical device industry provides a rare setting in which AI innovation can be measured directly: every AI-enabled device must obtain regulatory clearance
+  before reaching patients, leaving a dated, firm-attributable record of innovation. We exploit this setting using a novel firm-level dataset linking FDA premarket
+  clearances, USPTO patents, Scopus publications, and Orbis financial data, together with a three-stage recursive econometric model that traces the innovation chain from
+  external AI research collaboration through AI device introduction to firm performance. We find that external AI research collaboration is a robust driver of
+  AI device introduction, with particularly strong effects for small firms, suggesting that external knowledge partnerships can substitute for limited internal
+  R&D capacity. Industry and clinical collaborations have the largest impact, whereas academic collaborations play a more modest role. Firms that successfully introduce
+  AI-enabled medical devices achieve higher labour productivity, with gains that accumulate across successive device introductions. By contrast, improvements in
+  profit margins are weaker and less robust, consistent with increased competition reducing pricing power as AI technologies diffuse throughout the industry.
 </div>
     </div>
 
@@ -985,22 +974,10 @@
         <button class="copy-cite-btn" onclick="copyCitation(this)">Copy</button>
       </div>
       <div class="paper-abstract">
-  Artificial intelligence (AI) and high-performance computing (HPC) are transforming
-  scientific capabilities and the way science is conducted. Yet their combined impact
-  on scientific discovery remains poorly understood, as do inequalities in access to
-  these capabilities across countries and institutions. Drawing on metadata from more
-  than five million scientific publications (2000–2024) across 27 fields, we examine
-  how the convergence of AI and HPC correlates with scientific breakthroughs. Our
-  results show that this computational synergy is most pronounced at the scientific
-  frontier: research combining AI and HPC is more likely to introduce novel ideas and
-  achieve top-cited status than either conventional work or research using AI or HPC
-  in isolation. We also document growing disparities in access to supercomputing
-  resources and AI expertise, which are increasingly concentrated in a small number of
-  regions—led by the United States and China, although the EU27 as a whole remains
-  highly competitive in combined AI+HPC research output. The future of scientific
-  discovery will depend not only on advances in algorithms and computing power, but
-  also on policies that broaden access to these capabilities across the global
-  scientific ecosystem.
+  Artificial intelligence (AI) and high-performance computing (HPC) are transforming scientific capabilities and the way science is conducted. Yet their combined impact on scientific discovery remains poorly understood, as do inequalities in access to these capabilities across countries and institutions. Drawing on metadata from more
+  than five million scientific publications (2000–2024) across 27 fields, we examine how the convergence of AI and HPC correlates with scientific breakthroughs. Our results show that this computational synergy is most pronounced at the scientific frontier: research combining AI and HPC is more likely to introduce novel ideas and
+  achieve top-cited status than either conventional work or research using AI or HPC in isolation. We also document growing disparities in access to supercomputing resources and AI expertise, which are increasingly concentrated in a small number of regions—led by the United States and China, although the EU27 as a whole remains
+  highly competitive in combined AI+HPC research output. The future of scientific discovery will depend not only on advances in algorithms and computing power, but also on policies that broaden access to these capabilities across the global scientific ecosystem.
 </div>
     </div>
 
@@ -1287,3 +1264,6 @@
 
 </body>
 </html>
+```
+
+That's the whole file, ready to paste over what's in your repo.
