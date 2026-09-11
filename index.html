@@ -38,6 +38,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
 
+  <!-- Citation meta tags: paper 1 (Scientific Reports) -->
+  <meta name="citation_title" content="Scientific Discovery in the Age of AI and Supercomputing" />
+  <meta name="citation_author" content="Bianchini, Stefano" />
+  <meta name="citation_author" content="Geuna, Aldo" />
+  <meta name="citation_author" content="Shermatov, Fazliddin" />
+  <meta name="citation_publication_date" content="2026" />
+  <meta name="citation_journal_title" content="Scientific Reports" />
+  <meta name="citation_doi" content="10.1038/s41598-026-63438-7" />
+  <meta name="citation_pdf_url" content="https://doi.org/10.1038/s41598-026-63438-7" />
+
+  <!-- Citation meta tags: paper 2 (working paper, SSRN) -->
+  <meta name="citation_title" content="AI Innovation and Firm Performance in the Medical Device Industry" />
+  <meta name="citation_author" content="Shermatov, Fazliddin" />
+  <meta name="citation_author" content="Robin, Stéphane" />
+  <meta name="citation_author" content="Geuna, Aldo" />
+  <meta name="citation_publication_date" content="2026/09/01" />
+  <meta name="citation_doi" content="10.2139/ssrn.7410838" />
+  <meta name="citation_pdf_url" content="https://dx.doi.org/10.2139/ssrn.7410838" />
+
   <!-- Structured data: tells Google this page is a Person profile -->
   <script type="application/ld+json">
   {
@@ -55,9 +74,17 @@
       {
         "@type": "CollegeOrUniversity",
         "name": "University of Strasbourg (BETA)"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Turin"
+      },
+      {
+        "@type": "Organization",
+        "name": "Collegio Carlo Alberto"
       }
     ],
-    "email": "mailto:shermatov@unistra.fr",
+    "email": "mailto:fazliddin.shermatov@edu.univ-paris13.fr",
     "sameAs": [
       "https://www.linkedin.com/in/shermatov-fazli/",
       "https://orcid.org/0009-0007-8562-8196",
@@ -68,12 +95,63 @@
     "knowsAbout": [
       "Economics of Science and Innovation",
       "Artificial Intelligence",
+      "High-Performance Computing",
       "Innovation Economics",
       "Firm Performance",
       "Medical Devices",
+      "Knowledge Collaboration",
+      "Patents and Bibliometrics",
       "Econometrics"
     ]
   }
+  </script>
+
+  <!-- Structured data: scholarly works -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Scientific Discovery in the Age of AI and Supercomputing",
+      "author": [
+        { "@type": "Person", "name": "Stefano Bianchini" },
+        { "@type": "Person", "name": "Aldo Geuna" },
+        { "@type": "Person", "name": "Fazliddin Shermatov" }
+      ],
+      "datePublished": "2026",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Scientific Reports"
+        }
+      },
+      "identifier": "https://doi.org/10.1038/s41598-026-63438-7",
+      "url": "https://doi.org/10.1038/s41598-026-63438-7",
+      "sameAs": "https://doi.org/10.1038/s41598-026-63438-7",
+      "description": "We examine how the convergence of AI and high-performance computing correlates with scientific breakthroughs, drawing on metadata from more than five million scientific publications (2000-2024) across 27 fields."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "additionalType": "https://schema.org/ScholarlyArticle",
+      "headline": "AI Innovation and Firm Performance in the Medical Device Industry",
+      "author": [
+        { "@type": "Person", "name": "Fazliddin Shermatov" },
+        { "@type": "Person", "name": "Stéphane Robin" },
+        { "@type": "Person", "name": "Aldo Geuna" }
+      ],
+      "datePublished": "2026-09-01",
+      "identifier": "https://dx.doi.org/10.2139/ssrn.7410838",
+      "url": "https://dx.doi.org/10.2139/ssrn.7410838",
+      "sameAs": "https://dx.doi.org/10.2139/ssrn.7410838",
+      "publisher": {
+        "@type": "Organization",
+        "name": "SSRN"
+      },
+      "description": "We exploit a novel firm-level dataset linking FDA premarket clearances, USPTO patents, Scopus publications, and Orbis financial data to trace the innovation chain from external AI research collaboration through AI device introduction to firm performance."
+    }
+  ]
   </script>
   <style>
 
@@ -918,7 +996,13 @@
       <h3 class="paper-title">AI Innovation and Firm Performance in the Medical Device Industry</h3>
       <p class="paper-authors">Fazliddin Shermatov, Stéphane Robin, Aldo Geuna</p>
       <div class="paper-links">
+        <a href="https://dx.doi.org/10.2139/ssrn.7410838" class="paper-link" target="_blank">DOI ↗</a>
         <button class="abstract-btn" onclick="toggleAbstract(this)">▾ Abstract</button>
+        <button class="abstract-btn" onclick="toggleCite(this)">▾ Cite as</button>
+      </div>
+      <div class="paper-cite">
+        <span class="cite-text">Shermatov, F., Robin, S., &amp; Geuna, A. (2026). AI Innovation and Firm Performance in the Medical Device Industry. Available at SSRN: https://dx.doi.org/10.2139/ssrn.7410838</span>
+        <button class="copy-cite-btn" onclick="copyCitation(this)">Copy</button>
       </div>
       <div class="paper-abstract">
   Whether artificial intelligence (AI) pays off for the firms that embed it in their products remains difficult to establish because AI innovation is itself hard to
@@ -1217,7 +1301,7 @@
      FOOTER
 ════════════════════════════════════════════════ -->
 <footer>
-  © 2026 Fazliddin Shermatov &nbsp;·&nbsp; Last updated August 2026
+  © 2026 Fazliddin Shermatov &nbsp;·&nbsp; Last updated September 2026
 </footer>
 
 
